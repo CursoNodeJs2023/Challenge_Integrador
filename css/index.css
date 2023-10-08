@@ -334,16 +334,6 @@ header {
     font-weight: 700;
 }
 
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
 /* FOOTER */
 
 footer {
@@ -354,4 +344,15 @@ footer {
 .footer__copy {
     margin-top: var(--spacing-36);
     text-align: center;
+}
+
+/* ANIMATIONS */
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
