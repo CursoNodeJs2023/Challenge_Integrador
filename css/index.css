@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css');
+@import url('https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css');
+
 
 :root{
     /*palette*/
@@ -65,6 +68,9 @@ a {
     font-family: inherit;
     color: inherit;
 }
+p {
+    font-size: 1.8em;
+}
 
 header,
 footer {
@@ -74,10 +80,7 @@ footer {
 
 ul, ol {
     list-style-type: none;
-}
 
-p {
-    font-size: 1.8em;
 }
 
 
@@ -85,9 +88,20 @@ img {
     max-width: 100%;
 }
 
+input[type="text"]::placeholder {
+    color: var(--dark-300);
+    font-family: var(--base-font);
+    font-weight: 500;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+.grid-fixed {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
 /* HEADER */
