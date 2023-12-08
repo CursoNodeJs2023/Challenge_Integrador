@@ -1,8 +1,23 @@
+
 const shopController = {
-    shop:(req, res) => res.send('Route for Shop View'),
-    shopItem:(req, res) => res.send(`Route for find and retrieve a product from the id: ${req.params.id}`),
+    shop: async(req, res) =>  res.render('../views/shop/shop' , {
+        view: {
+            title:  "Shop | Funkoshop"
+        },
+        
+    }),
+    shopItem:(req, res) => res.render('../views/shop/item' , {
+        view:{
+            title: "Item | Funkoshop"
+        }
+    }),
     addItemToCart:(req, res) => res.send('Route for add the current item to the shop cart'),
-    cart:(req, res) => res.send('Route cart View'),
+
+    cart:(req, res) => res.render('../views/shop/cart' , {
+        view:{
+            title: "Cart | Funkoshop"
+        },
+    }),
     checkout:(req, res) => res.send('Route for got checkout page')
 
 }

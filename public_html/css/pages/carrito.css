@@ -258,7 +258,7 @@
 
 /* COLORS */
 
-.btn--primary {
+.btn--primary1 {
     background-color: var(--primary-solid);
     color: var(--light-font-solid);
     transition: background 0.2s ease-in-out;

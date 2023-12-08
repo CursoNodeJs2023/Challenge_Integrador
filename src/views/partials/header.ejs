@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= view.title %></title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/item.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="../../css/pages/carrito.css">
+    <link rel="stylesheet" href="../../css/pages/admin.css">
+    <link rel="stylesheet" href="../../css/pages/create.css">
+    <link rel="stylesheet" href="../../css/pages/edit.css">
+    <link rel="stylesheet" href="../../css/pages/btn.css">
+    <link rel="stylesheet" href="../../css/pages/login.css">
+    <link rel="stylesheet" href="../../css/pages/register.css">
+    
+</head>
+
+<body>
+    <!-- Inicio HEADER -->
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="/home">
+                    <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo FunkoShop">
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="/shop">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Llaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/admin/contact.html">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="/admin/login">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="/shop/cart">
+                        <img src="/img/icons/cart-icon.svg" alt="carrito de compras"><span id="cuenta-carrito">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Fin HEADER -->
+    

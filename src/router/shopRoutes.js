@@ -1,0 +1,171 @@
+const expresss = require('express');
+const router = expresss.Router();
+const shopController = require('../controllers/shopController');
+const items = [
+    
+        {
+          id: 1,
+          licence_name: "Pokemon",
+          category_name: "Figuras coleccionables",
+          product_name: "Charmander Smiley",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "PKM001001",
+          img_front: "/img/pokemon/charmander-1.webp",
+          img_back: "/img/pokemon/charmander-box.webp"
+        },
+        {
+          id: 2,
+          licence_name: "Pokemon",
+          category_name: "Figuras coleccionables",
+          product_name: "Dragonite Hi!",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "PKM001002",
+          img_front: "/img/pokemon/dragonite-1.webp",
+          img_back: "/img/pokemon/dragonite-box.webp"
+        },
+        {
+          id: 3,
+          licence_name: "Pokemon",
+          category_name: "Figuras coleccionables",
+          product_name: "Pidgeotto",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "PKM001003",
+          img_front: "/img/pokemon/pidgeotto-1.webp",
+          img_back: "/img/pokemon/pidgeotto-box.webp"
+        },
+        {
+          id: 4,
+          licence_name: "Pokemon",
+          category_name: "Figuras coleccionables",
+          product_name: "Pikachu Smiley",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "PKM001004",
+          img_front: "/img/pokemon/pikachu-1.webp",
+          img_back: "/img/pokemon/pikachu-box.webp"
+        },
+        {
+          id: 5,
+          licence_name: "Pokemon",
+          category_name: "Figuras coleccionables",
+          product_name: "Vulpix Fancy",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "PKM001005",
+          img_front: "/img/pokemon/vulpix-1.webp",
+          img_back: "/img/pokemon/vulpix-box.webp"
+        },
+        {
+          id: 6,
+          licence_name: "Star Wars",
+          category_name: "Figuras coleccionables",
+          product_name: "Baby Yoda Blueball",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "STW001001",
+          img_front: "/img/star-wars/baby-yoda-1.webp",
+          img_back: "/img/star-wars/baby-yoda-box.webp"
+        },
+        {
+          id: 7,
+          licence_name: "Star Wars",
+          category_name: "Figuras coleccionables",
+          product_name: "Boba Fett Fighter",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "STW001002",
+          img_front: "/img/star-wars/bobbafeth-1.webp",
+          img_back: "/img/star-wars/bobbafeth-box.webp"
+        },
+        {
+          id: 8,
+          licence_name: "Star Wars",
+          category_name: "Figuras coleccionables",
+          product_name: "Luke Skylwalker & Grogu",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "STW001003",
+          img_front: "/img/star-wars/luke-1.webp",
+          img_back: "/img/star-wars/luke-box.webp"
+        },
+        {
+          id: 9,
+          licence_name: "Star Wars",
+          category_name: "Figuras coleccionables",
+          product_name: "Stormtrooper Lightsaber",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "STW001004",
+          img_front: "/img/star-wars/trooper-1.webp",
+          img_back: "/img/star-wars/trooper-box.webp"
+        },
+        {
+          id: 10,
+          licence_name: "Harry Potter",
+          category_name: "Figuras coleccionables",
+          product_name: "Harry Potter & Hegwid",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "HPT001001",
+          img_front: "/img/harry-potter/harry-1.webp",
+          img_back: "/img/harry-potter/harry-box.webp"
+        },
+        {
+          id: 11,
+          licence_name: "Harry Potter",
+          category_name: "Figuras coleccionables",
+          product_name: "Hermione Ball Dress",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "HPT001002",
+          img_front: "/img/harry-potter/hermione-1.webp",
+          img_back: "/img/harry-potter/hermione-box.webp"
+        },
+        {
+          id: 12,
+          licence_name: "Harry Potter",
+          category_name: "Figuras coleccionables",
+          product_name: "Luna Lovegood Lion Mask",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "HPT001003",
+          img_front: "/img/harry-potter/luna-1.webp",
+          img_back: "/img/harry-potter/luna-box.webp"
+        },
+        {
+          id: 13,
+          licence_name: "Harry Potter",
+          category_name: "Figuras coleccionables",
+          product_name: "Snape Patronus",
+          product_description: "Figura coleccionable pokemon",
+          product_price: 1799.99,
+          dues: 10,
+          product_sku: "HPT001004",
+          img_front: "/img/harry-potter/snape-1.webp",
+          img_back: "/img/harry-potter/snape-box.webp"
+        }
+      ]
+
+
+router.get('/', shopController.shop);
+router.get('/item/:id', shopController.shopItem);
+router.post('/item/:id/add', shopController.addItemToCart);
+router.get('/cart', shopController.cart);
+router.post('/cart', shopController.checkout);
+
+module.exports = router;
