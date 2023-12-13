@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 4000;
 
 
 
-app.use(express.static('public_html'));
+app.use(express.static(path.resolve(__dirname, "public_html")));
 app.use(express.urlencoded());
 app.use(express.json());
 
@@ -51,20 +51,20 @@ app.get('/item/:id'); /*, (req, res) => {
 })  ;  
 */
 app.set('view engine', 'ejs');
-app.set('views', './src/views');
+app.set('views', path.resolve(__dirname, "./src/views"));
 
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', authRoutes);
 
-app.use(express.static(path.resolve(__dirname, "public")));
 
 
 
 
 
-  app.use(methodOverride('_method'));
+
+app.use(methodOverride('_method'));
 
 
 
