@@ -2,22 +2,20 @@
 <main class="container">
     <section class="item">
         <picture class="item__img card-item__cover">
-            <img class="card-item__img--front"  src="/img/star-wars/baby-yoda-1.webp"
-                alt="Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga">
-            <img class="card-item__img--back" src="/img/star-wars/baby-yoda-box.webp"
-                alt="Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga">
+            <img class="card-item__img--front"  src="../../img<%= item.image_front %>" alt="<%= item.product_description %>">
+            <img class="card-item__img--back" src="../../img<%= item.image_back %>" alt="<%= item.product_description %>">
         </picture>
         <article class="item__info">
-            <p class="item__licence">STAR WARS</p>
-            <h3 class="item__name">BABY YODA BLUEBALL</h3>
-            <p class="item__dscription">Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
-            <p class="item__price">$ 1799,99.-</p>
-            <div class="item__cart">
+            <p class="item__licence"><%= item.licence_name %></p>
+            <h3 class="item__name"><%= item.product_name %></h3>
+            <p class="item__dscription"><%= item.product_description %></p>
+            <p class="item__price"><%= item.price %></p>
+            <form class="item__cart" action="#" method="POST" enctype="application/x-www-form-urlencoded">
                 <button id="subtract" class="item__quantity" type="button">-</button>
-                <input class="item__input" type="text" name="quantity" id="quantity" placeholder="0">
+                <input id="quantity" class="item__input" type="text" name="quantity" placeholder="0">
                 <button id="add" class="item__quantity" type="button">+</button>
                 <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al carrito</button>
-            </div>
+            </form>
             <p class="item__promo"><a href="">Ver métodos de pago</a> - 3 CUOTAS SIN INTERÉS</p>
         </article>
     </section>
@@ -25,7 +23,7 @@
             <h2 class="slider__title">Productos relacionados</h2>
             <div class="glide__track" data-glide-el="track">
                 <ul class="slider__items glide__slides">
-                    <li class="slider__item glide__slides">
+                    <li class="slider__item glide__slide">
                         <article class="card-item">
                             <a class="card-item__link" href="">
                                <picture class="card-item__cover">
@@ -92,5 +90,6 @@
         </section>
     </section>
 </main>
+<script src="../../views/shop/item.ejs"></script>
 <%- include('../partials/footer') %>
 
