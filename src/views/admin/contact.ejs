@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+<main id="contact" class="container">
+    <section class="contact">
+        <div class="contactForm" >
+            <div class="form">
+                <div class="contact_texto">
+                    <h2>¡Contactanos!</h2>
+                </div>
+                <form action="">
+                    <div class="contact_inputBox">
+                        <label class="form__label" for="">Tu nombre</label>
+                        <input class="form__input-contact" type="text" placeholder="Nombre...">
+                    </div>
+                    <div class="contact_inputBox">
+                        <label class="form__label">Tu email</label>
+                        <input class="form__input-contact" type="email" placeholder="Email...">
+                    </div>
+                    <div>
+                        <label class="form__label" for="">Tu mensaje</label>
+                        <textarea class="contact_tarea" name="" id="" cols="30" rows="5" placeholder=" Mensaje..."></textarea>
+                    </div>  
+                    <input class="btn btn--primary btn--large" type="submit" value="Enviar Mensaje">  
+                </form>
+            </div>
+            <span class="contact_i">
+                <iconify-icon icon="carbon:map"></iconify-icon> <p>Pedro Lagrave 2107 Pilar CP 1629,Buenos Aires</p>
+                <iconify-icon icon="tabler:phone"></iconify-icon> <p>+54 (0230) 486734</P>
+                <iconify-icon icon="entypo:email"></iconify-icon> <p>contactoFunko@gmail.com</p>   
+
+            </span>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>

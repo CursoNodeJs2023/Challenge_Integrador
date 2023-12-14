@@ -1,6 +1,6 @@
 const userCredentials = {
-    email: 'marian@gmail.com',
-    password: 'maga123'
+    email: 'prueba1@hotmail.com',
+    password: 'asdfasdf'
   }
   
   module.exports = {
@@ -29,8 +29,11 @@ const userCredentials = {
       }
     }),
     registerUser:  (req, res) => res.send('Register Route that receive the data when user click register button'),
+
     logoutUser:  (req, res) => {
       req.session.isLogged = false;
       res.send('Sesión finalizada con éxito.')
+      
+      
     },
   }

@@ -18,12 +18,14 @@ const PORT = process.env.PORT || 4000;
 
 
 app.use(express.static(path.resolve(__dirname, "public_html")));
+
 app.use(express.urlencoded());
 app.use(express.json());
 
 
 
 app.use(initSession());
+
 app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
     next();

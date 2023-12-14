@@ -11,7 +11,13 @@ module.exports = {
       enableGlide: true
     });
   },
-  contactView:(req, res) => res.send('Contact View Route'),
+  contactView:(req, res) =>  {
+    res.render('./admin/contact', {
+      view: {
+       title: "Contacto | Funkoshop"
+     },
+   });
+  },
   aboutView:(req, res) => res.send('About View Route'),
   faqsView:(req, res) => res.send('FAQs View Route'),
 };
