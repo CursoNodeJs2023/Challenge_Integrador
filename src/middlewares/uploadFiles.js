@@ -4,7 +4,7 @@ const path = require('path');
 /* Logica para guardar imagenes en el server */
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, path.resolve(__dirname, '../../public/img')),
+  destination: (req, file, cb) => cb(null, path.resolve(__dirname, '../../public_html/img')),
   filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
 });
 

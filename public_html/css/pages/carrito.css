@@ -1,5 +1,6 @@
 #carrito {
-    margin: var(--spacing-68) ;
+    margin-top: 50px;
+    margin-block-end: 50px;
     display:flex;
     flex-direction: column;
     justify-content: center;

@@ -1,14 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const fs = require('fs');
+const methodOverride = require('method-override');
+const { initSession } = require('./src/utils/sessions');
+require('dotenv').config();
+
 const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const authRoutes = require('./src/routes/authRoutes');
-const methodOverride = require('method-override');
-const { initSession } = require('./src/utils/sessions');
-require('dotenv').config();
+
 
 const { notFoundPage } = require('./src/utils/errorHandlers');
 
@@ -32,15 +33,15 @@ app.use((req, res, next) => {
   });
 
 
-app.get('/item'); /*, (req, res) => {
+/*app.get('/item'); , (req, res) => {
     res.sendFile(__dirname+"/data/items.json");
     const items = JSON.parse(items);
     
     res.send(items)
 
 });
-*/
-app.get('/item/:id'); /*, (req, res) => {
+
+app.get('/item/:id'); , (req, res) => {
     const id = req.params.id;
     const items = fs.readFileSync(__dirname+"/data/items.json");
     const result = JSON.parse(items);

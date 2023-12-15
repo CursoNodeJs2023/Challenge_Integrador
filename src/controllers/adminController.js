@@ -64,7 +64,7 @@ module.exports = {
     const id = req.params.id;
 
     await ItemsService.delete(id);
-    res.redirect('/admin');
+    res.redirect('./admin');
   },
 };
 

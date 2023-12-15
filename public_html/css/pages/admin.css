@@ -70,3 +70,17 @@
 .admin-table__header {
     margin-bottom: var(--spacing-24);
 }
+.admin-table__header {
+    margin-bottom: var(--spacing-24);
+}
+
+
+.admin-table__btn-delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-table__btn-delete iconify-icon {
+    font-size: 28px;
+}

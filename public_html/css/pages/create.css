@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    gap: var(--spacing-48);
+    gap: var(--spacing-36);
 }
 /* REGULAR FORM ELEMENTS */
 
