@@ -31,7 +31,7 @@ module.exports = {
     const item = req.body;
     const files = req.files;
     await ItemsService.create(item, files);
-    res.redirect('/admin');
+    res.redirect('./admin');
   },
   bulkCreate:  async (req, res) => {
     const items = req.body;
@@ -62,6 +62,7 @@ module.exports = {
   },
   deleteItem:  async (req, res) => {
     const id = req.params.id;
+    consolelog(id);
 
     await ItemsService.delete(id);
     res.redirect('./admin');

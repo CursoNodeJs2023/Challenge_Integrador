@@ -45,7 +45,9 @@ const editItem = async (item, id) => {
 
 
 const deleteItem = async (id) => {
+  console.log(id);
   return await ItemModel.delete({product_id: id});
+
 }
 
 module.exports = {
