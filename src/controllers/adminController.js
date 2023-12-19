@@ -1,11 +1,12 @@
-const ItemsService = require('../services/itemServices');
+const ItemsServices = require('../services/itemServices');
 const CategoryService = require('../services/categoryService');
 const LicenceService = require('../services/licenceService');
 
 
+
 module.exports = {
   adminView: async (req, res) => {
-    const { data } = await ItemsService.getAllItems();
+    const { data } = await ItemsServices.getAllItems();
     res.render( './admin/admin',
     {
       view: {
@@ -30,19 +31,19 @@ module.exports = {
   createItem:  async (req, res) => {
     const item = req.body;
     const files = req.files;
-    await ItemsService.create(item, files);
-    res.redirect('./admin');
+    await itemServices.create(item, files);
+    res.redirect('/admin');
   },
   bulkCreate:  async (req, res) => {
     const items = req.body;
-    const result = await ItemsService.create(items.map(el => Object.values(el)));
+    const result = await ItemsServices.create(items.map(el => Object.values(el)));
     res.send(result);
   },
   editView:  async (req, res) => {
     const id = req.params.id;
     const { data: categories } = await CategoryService.getAllItemsCategories();
     const { data: licences } = await LicenceService.getAllItemsLicences();
-    const { data } = await ItemsService.getItem(id);
+    const { data } = await ItemsServices.getItem(id);
     console.log(categories, licences);
     res.render('./admin/edit', {
       view: {
@@ -57,15 +58,14 @@ module.exports = {
     const id = req.params.id;
     const item = req.body;
 
-    await ItemsService.edit(item, id);
+    await ItemsServices.edit(item, id);
     res.redirect('/admin');
   },
   deleteItem:  async (req, res) => {
     const id = req.params.id;
-    consolelog(id);
 
-    await ItemsService.delete(id);
-    res.redirect('./admin');
+    await ItemsServices.delete(id);
+    res.redirect('/admin');
   },
 };
 

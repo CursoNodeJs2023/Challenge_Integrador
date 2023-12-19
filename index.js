@@ -16,13 +16,10 @@ const { notFoundPage } = require('./src/utils/errorHandlers');
 const PORT = process.env.PORT || 4000;
 
 
-
-
 app.use(express.static(path.resolve(__dirname, "public_html")));
 
-app.use(express.urlencoded());
-app.use(express.json());
-
+app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname, "./src/views"));
 
 
 app.use(initSession());
@@ -31,6 +28,9 @@ app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
     next();
   });
+
+  app.use(express.urlencoded());
+app.use(express.json());
 
 
 /*app.get('/item'); , (req, res) => {
@@ -53,22 +53,14 @@ app.get('/item/:id'); , (req, res) => {
 
 })  ;  
 */
-app.set('view engine', 'ejs');
-app.set('views', path.resolve(__dirname, "./src/views"));
+
+
+app.use(methodOverride('_method'));
 
 app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/', authRoutes);
-
-
-
-
-
-
-
-app.use(methodOverride('_method'));
-
 
 
 app.use(notFoundPage);

@@ -91,8 +91,7 @@ const edit = async (params, id) => {
 
 const deleteOne = async (params) => {
   try {
-    const [rows] = await conn.query('DELETE FROM product WHERE ?;', params);
-  
+    const [rows] = await conn.query('DELETE FROM product WHERE ?;', params)
     const response = {
       isError: false,
       data: rows,
