@@ -28,7 +28,13 @@ module.exports = {
       title: 'Register | Funkoshop'
     }
   }),
-  registerUser:  (req, res) => res.send('Register Route that receive the data when user click register button'),
+  registerUser: async (req, res) =>  {
+    const id = req.params.id;
+    const item = req.body;
+
+    await ItemsServices.edit(item, id);
+    res.redirect('/admin');
+  },
 
   logoutUser:  (req, res) => {
     req.session.isLogged = false;

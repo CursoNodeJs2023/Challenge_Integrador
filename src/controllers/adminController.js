@@ -31,8 +31,8 @@ module.exports = {
   createItem:  async (req, res) => {
     const item = req.body;
     const files = req.files;
-    await itemServices.create(item, files);
-    res.redirect('/admin');
+    await ItemsServices.create(item, files);
+    res.redirect('./admin');
   },
   bulkCreate:  async (req, res) => {
     const items = req.body;
